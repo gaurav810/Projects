@@ -1,0 +1,21 @@
+textarea {
+  resize: vertical;
+}
+.reportForm{
+    background: #ececec;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.tableHead{
+	background: #ececec;
+}
+.ui-datepicker{
+	z-index: 9!important;
+}
+.cutomTable th:first-child, cutomTable td:first-child{
+	width:10%;
+}
+.cutomTable th, cutomTable td{
+	width:30%;
+}
