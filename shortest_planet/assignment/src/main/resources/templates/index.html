@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Assignment</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+      <script th:src="@{/main.js}"></script>
+      <link th:href="@{/main.css}" rel="stylesheet" />
+   </head>
+   <body ng-app="PlanetShortestPath" ng-controller="PlanetShortestPathController">
+      <h3>
+      	Planet Shortest Path Assignment
+      </h3>
+      <a href="#" style="padding: 20px;">Create Planet</a>
+      <a href="/distanc-planets" style="padding: 20px;">Planet Distance</a>
+      <a href="/shortest-path" style="padding: 20px;">Shortest Path</a>
+      <h2>Create Planet</h2>
+      <form ng-submit="submitPlanetName()">
+         <table border="0">
+         	<tr>
+               <td>Id</td>
+               <td>{{planetNameForm.id}}</td>
+            </tr>
+            <tr>
+               <td>Planet Name</td>
+               <td><input type="text" ng-model="planetNameForm.name"  /></td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <input type="submit" value="Submit" class="blue-button" />
+               </td>
+            </tr>
+         </table>
+      </form>
+      <br/>
+      <a class="create-button" ng-click="createPlanet()">Create New Planet</a>
+      <table border="1">
+         <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+         </tr>
+         <tr ng-repeat="planet in planets">
+            <td> {{ planet.id }}</td>
+            <td> {{ planet.name }}</td>
+            <td>
+            <a ng-click="editPlanet(planet)" class="edit-button">Edit</a>
+            </td>
+            <td>
+            <a ng-click="deletePlanet(planet)" class="delete-button">Delete</a>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

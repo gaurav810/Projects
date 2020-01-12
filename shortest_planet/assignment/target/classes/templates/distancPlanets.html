@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Assignment</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+      <script th:src="@{/distancPlanets.js}"></script>
+      <link th:href="@{/main.css}" rel="stylesheet" />
+   </head>
+   <body ng-app="PlanetShortestPath" ng-controller="DistancPlanetsController">
+      <h3>
+      	Planet Shortest Path Assignment
+      </h3>
+      <a href="/" style="padding: 20px;">Create Planet</a>
+      <a href="#" style="padding: 20px;">Planet Distance</a>
+      <a href="/shortest-path" style="padding: 20px;">Shortest Path</a>
+      <h2>Planet Distance</h2>
+      <form ng-submit="submitDistancePlanets()">
+         <table border="0">
+         	<tr>
+               <td>Id</td>
+               <td>{{distancPlanetsForm.id}}</td>
+            </tr>
+            <tr>
+               <td>Source Planet</td>
+               <td><input type="text" ng-model="distancPlanetsForm.sourcePlanet"  /></td>
+            </tr>
+            <tr>
+               <td>Destination Planet</td>
+               <td><input type="text" ng-model="distancPlanetsForm.destinationPlanet"  /></td>
+            </tr>
+            <tr>
+               <td>Distance</td>
+               <td><input type="number" ng-model="distancPlanetsForm.distance"  /></td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <input type="submit" value="Submit" class="blue-button" />
+               </td>
+            </tr>
+         </table>
+      </form>
+      <br/>
+      <a class="create-button" ng-click="createDistancPlanets()">Create New Distance Planet</a>
+      <table border="1">
+         <tr>
+         	<th>Id</th>
+            <th>Source Planet</th>
+            <th>Destination Planet</th>
+            <th>Distance</th>
+            <th>Edit</th>
+            <th>Delete</th>
+         </tr>
+         <tr ng-repeat="distance in distancPlanets">
+         	<td> {{ distance.id }}</td>
+            <td> {{ distance.sourcePlanet.name }}</td>
+            <td> {{ distance.destinationPlanet.name }}</td>
+            <td> {{ distance.distance }}</td>
+            <td>
+            <a ng-click="editDistancPlanets(distance)" class="edit-button">Edit</a>
+            </td>
+            <td>
+            <a ng-click="deleteDistanse(distance)" class="delete-button">Delete</a>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

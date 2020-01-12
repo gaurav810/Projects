@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Assignment</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+      <script th:src="@{/shortestPath.js}"></script>
+      <link th:href="@{/main.css}" rel="stylesheet" />
+   </head>
+   <body ng-app="PlanetShortestPath" ng-controller="ShortestPathController">
+      <h3>
+      	Planet Shortest Path Assignment
+      </h3>
+      <a href="/" style="padding: 20px;">Create Planet</a>
+      <a href="/distanc-planets" style="padding: 20px;">Planet Distance</a>
+      <a href="#" style="padding: 20px;">Shortest Path</a>
+      <h2>Shortest Path</h2>
+      <table border="1">
+         <tr>
+         	<th>Source Planet</th>
+            <th>Destination Planet</th>
+            <th>Shortest Distance</th>
+            <th>Shortest Path</th>
+         </tr>
+         <tr ng-repeat="path in shortestPaths">
+         	<td> {{ path.sourceNode }}</td>
+            <td> {{ path.destinatoinNode }}</td>
+            <td> {{ path.shortestDistance }}</td>
+            <td> {{ path.shortestPath }}</td>
+         </tr>
+      </table>
+      <p style="color: red">Note: First created planet is default source planet</p>
+   </body>
+</html>
