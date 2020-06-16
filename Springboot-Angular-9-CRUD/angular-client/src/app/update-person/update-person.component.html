@@ -1,0 +1,18 @@
+<h3>Update Person</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="updatePerson()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="person.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Email Id</label>
+      <input type="text" class="form-control" id="emailId" required [(ngModel)]="person.emailId" name="emailId">
+    </div>
+    <div class="form-group">
+        <label for="name">Contact No.</label>
+        <input type="text" class="form-control" id="contactNo" required [(ngModel)]="person.contactNo" name="contactNo">
+    </div> 
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
