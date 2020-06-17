@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layout/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { EmployeesComponent } from './modules/employees/employees.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { MyProfileComponent } from './modules/my-profile/my-profile.component';
+import { ResetPasswordComponent } from './modules/reset-password/reset-password.component';
+import { UserComponent } from './modules/user/user.component';
 
 
 const routes: Routes = [
@@ -15,8 +17,14 @@ const routes: Routes = [
       path: '',
       component: DashboardComponent,
     }, {
-      path: 'employees',
-      component: EmployeesComponent
+      path: 'user',
+      component: UserComponent
+    }, {
+      path: 'my-profile',
+      component: MyProfileComponent
+    }, {
+      path: 'reset-password',
+      component: ResetPasswordComponent
     }]
   }, {
     path: 'login',

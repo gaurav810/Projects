@@ -9,12 +9,16 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MyProfileComponent } from './modules/my-profile/my-profile.component';
+import { ResetPasswordComponent } from './modules/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    MyProfileComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-import { EmployeesComponent } from 'src/app/modules/employees/employees.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UserComponent } from 'src/app/modules/user/user.component';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    EmployeesComponent
+    UserComponent
   ],
   imports: [
     CommonModule,
