@@ -5,6 +5,8 @@ import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.componen
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UserComponent } from 'src/app/modules/user/user.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtTokenInterceptor } from 'src/app/services/jwt-token-interceptor';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,15 @@ import { UserComponent } from 'src/app/modules/user/user.component';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
-  ]
+    SharedModule,
+    HttpClientModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtTokenInterceptor,
+      multi: true
+    }
+]
 })
 export class DefaultModule { }

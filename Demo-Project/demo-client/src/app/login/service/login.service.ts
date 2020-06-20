@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpBackend } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,9 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  private httpClient: HttpClient;
+
+  constructor( handler: HttpBackend) { 
+     this.httpClient = new HttpClient(handler);
+  }
 
   loginUser(user: Object): Observable<Object> {
-    return this.http.post("http://localhost:7707/login", user);
+    return this.httpClient.post("http://localhost:7707/login", user);
+  }
+
+  public getToken(): string {
+    return localStorage.getItem('token');
   }
 }

@@ -22,10 +22,6 @@ export class LoginComponent implements OnInit {
     this.commonService.message = undefined;
   }
 
-  redirectToRegisterPage() {
-    this.router.navigate(['register']);
-  }
-
   loginProcess() {
     
     this.loginService.loginUser(this.user)
